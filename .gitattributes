@@ -1,0 +1,5 @@
+# set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# keep .svg files as Windows line endings crlf
+*.svg eol=crlf

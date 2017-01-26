@@ -1,0 +1,159 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/*
+  ========================================
+  General
+  ========================================
+*/
+
+body {
+  background-color: #f5f8fa;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: normal;
+  margin: 3%;
+}
+
+.group:before,
+.group:after {
+  content:"";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
+header {
+  background-color: #55ACEE;
+  border-radius: 20px;
+  margin-bottom: 3%;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  text-align: center;
+}
+
+header img {
+  float: left;
+  margin-left: 5%;
+  margin-top: -5%;
+  max-width: 15%;
+}
+
+header h1 {
+  color: white;
+  display: inline-block;
+  font-size: 2.5em;
+  /*necessary to center it (subtracting the header img margin and width*/
+  margin-left: -20%
+}
+
+/*
+  ========================================
+  Tweets
+  ========================================
+*/
+
+.feed {
+  border: 1px solid #e1e8ed;
+  background-color: white;
+  padding: 2.5%;
+}
+
+.feed a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.feed a:hover {
+  color: #77c7f7;
+}
+
+.date {
+  font-size: 0.8em;
+  color: #aab8c2;
+}
+
+/*
+  ========================================
+  Footer
+  ========================================
+*/
+
+footer {
+  background-color: white;
+  border-radius: 5px;
+  /*necessary to center it*/
+  margin: 2% 25%;
+  padding: 1%;
+  width: 50%;
+}
+
+footer p {
+  color: #aab8c2;
+  text-align: center;
+}
+
+footer small {
+  font-size: 0.8em;
+}
