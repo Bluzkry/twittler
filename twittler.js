@@ -3,31 +3,14 @@
  */
 $(document).ready(function() {
   var $feed = $('.feed');
-  // must clear the feed before showing tweets (otherwise reloading Tweets will copy and paste previous feeds
-  $('.feed').text('');
+  // must clear the feed before showing tweets (otherwise reloading Tweets will copy and paste previous feeds)
+  $feed.text('');
   var reloadTweets = setInterval(showTweets, 1000);
 
   // this shows new tweets (which are automatically uploaded via data_generator's scheduleNextTweet function
   showTweets();
 
-  $('.username').on('click', function clickUser(event) {
-    event.preventDefault();
-
-    // clear the feed
-    $('.feed').text('');
-
-    // we find the specific user, which is on the attribute of the 'username' class
-    var specificUser = $(this).data('user');
-    // e.g. specificUser = shawndrost =>
-    // index = streams.users.shawndrost.length - 1, tweet = streams.users.shawndrost[index]
-    showTweets(streams.users[specificUser]);
-
-    // stops the tweets from reloading
-    clearInterval(reloadTweets);
-  });
-
   function showTweets(streamType) {
-    var argumentsArray = Array.prototype.slice.call(arguments);
     // clear the feed
     $('.feed').text('');
     var index;
@@ -61,6 +44,59 @@ $(document).ready(function() {
       $date.appendTo($tweet);
       index -= 1;
     }
+
+    // if this is placed outside the function, it doesn't work because of
+    // $('.feed').text('');
+    $('.username').on('click', function clickUser(event) {
+      event.preventDefault();
+
+      // we find the specific user, which is on the attribute of the 'username' class
+      var specificUser = $(this).data('user');
+      // e.g. specificUser = shawndrost =>
+      // index = streams.users.shawndrost.length - 1, tweet = streams.users.shawndrost[index]
+      showTweets(streams.users[specificUser]);
+
+      // show and enable button
+      var $button = $('nav').find('button');
+
+      $button.prop('disabled', false);
+      $button.css('opacity', "1");
+
+      // stops the tweets from reloading
+      clearInterval(reloadTweets);
+    });
+
   }
+
+  var $button = $('nav').find('button');
+
+  $button.on('click', function clickButton(event) {
+    showTweets();
+    // hide and disable the button
+    $button.prop('disabled', true);
+    $button.css('opacity', "0");
+    // reset the tweets by reloading the setInterval
+    reloadTweets = setInterval(showTweets, 1000);
+
+    $('.username').on('click', function clickUser(event) {
+      event.preventDefault();
+
+      // we find the specific user, which is on the attribute of the 'username' class
+      var specificUser = $(this).data('user');
+      // e.g. specificUser = shawndrost =>
+      // index = streams.users.shawndrost.length - 1, tweet = streams.users.shawndrost[index]
+      showTweets(streams.users[specificUser]);
+
+      // show and enable button
+      var $button = $('nav').find('button');
+
+      $button.prop('disabled', false);
+      $button.css('opacity', "1");
+
+      // stops the tweets from reloading
+      clearInterval(reloadTweets);
+    });
+
+  });
 
 });
