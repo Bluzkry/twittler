@@ -1,0 +1,25 @@
+{
+  "name": "twittler",
+  "version": "1.0.0",
+  "description": "Twitter clone",
+  "main": "data_generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bluzkry/hrsf71-twittler.git"
+  },
+  "keywords": [
+    "twittler"
+  ],
+  "author": "Alexander Zou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluzkry/hrsf71-twittler/issues"
+  },
+  "homepage": "https://github.com/Bluzkry/hrsf71-twittler#readme",
+  "dependencies": {
+    "moment": "^2.17.1"
+  }
+}

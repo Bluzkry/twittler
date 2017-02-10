@@ -40,7 +40,9 @@ $(document).ready(function() {
       $username.attr('data-user', tweet.user);
       $username.prependTo($tweet);
 
-      $date.text(tweet.created_at);
+      // use the moment library to create a variable that signifies the time since the tweet was created at
+      var momentTime = moment(tweet.created_at).fromNow();
+      $date.text(momentTime);
       $date.appendTo($tweet);
       index -= 1;
     }
@@ -77,26 +79,6 @@ $(document).ready(function() {
     $button.css('opacity', "0");
     // reset the tweets by reloading the setInterval
     reloadTweets = setInterval(showTweets, 1000);
-
-    $('.username').on('click', function clickUser(event) {
-      event.preventDefault();
-
-      // we find the specific user, which is on the attribute of the 'username' class
-      var specificUser = $(this).data('user');
-      // e.g. specificUser = shawndrost =>
-      // index = streams.users.shawndrost.length - 1, tweet = streams.users.shawndrost[index]
-      showTweets(streams.users[specificUser]);
-
-      // show and enable button
-      var $button = $('nav').find('button');
-
-      $button.prop('disabled', false);
-      $button.css('opacity', "1");
-
-      // stops the tweets from reloading
-      clearInterval(reloadTweets);
-    });
-
   });
 
 });
