@@ -125,6 +125,33 @@ nav button {
 
 /*
   ========================================
+  Tweet box
+  ========================================
+*/
+
+form {
+  text-align: center;
+}
+
+.tweet-form input {
+  font-size: 1.1em;
+  outline: none;
+}
+
+#tweet-text {
+  width: 50%;
+}
+
+#tweet-submit {
+  background-color: #c2ddf3;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  margin-left: 0.8em;
+}
+
+/*
+  ========================================
   Tweets
   ========================================
 */
@@ -132,6 +159,7 @@ nav button {
 .feed {
   border: 1px solid #e1e8ed;
   background-color: white;
+  margin-top: 3%;
   padding: 2.5%;
 }
 

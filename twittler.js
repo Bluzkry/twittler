@@ -2,6 +2,7 @@
  * Created by Trykezo on 1/25/17.
  */
 $(document).ready(function() {
+
   var $feed = $('.feed');
   // must clear the feed before showing tweets (otherwise reloading Tweets will copy and paste previous feeds)
   $feed.text('');
@@ -69,6 +70,15 @@ $(document).ready(function() {
     });
 
   }
+
+  $('.tweet-form').submit(function(event){
+    debugger;
+    event.preventDefault();
+    var $tweetBox = $(this).find('#tweet-text');
+    writeTweet($tweetBox.val(), 'alexanderzou');
+    showTweets();
+    $tweetBox.val('');
+  });
 
   var $button = $('nav').find('button');
 
