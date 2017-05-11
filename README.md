@@ -1,4 +1,4 @@
-#twittler
+# twittler
 This is simple Twitter clone (front-end only, alas). Twittler imitates a real-life Twitter timeline, with randomly composed messages by four friends of the user.
 
 One can also Tweet and see one's Tweets on the timeline.
